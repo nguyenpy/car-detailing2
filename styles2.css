@@ -1,0 +1,164 @@
+:root{
+    --primary-color: #da042a;
+    --primary-color-dark: #c00427;
+    --secondary-color: #15151f;
+    --secondary-color-dark: #0a0b0f;
+    --text-light: #6b7280;
+    --extra-light: #f8f7fd;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+.hero {
+    padding-block: 1rem;
+    background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("kaizen.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: min-content;
+}
+
+.heading h1 {
+    color: white;
+    font-size: 55px;
+    text-align: center;
+    margin-top: 35px;
+    box-shadow: 10px 10px 10px 10px #181818;
+    /* Removed invalid text-transform */
+    transition: text-shadow 0.6s ease-in;
+}
+
+.heading h1:hover {
+    text-shadow: 1rem 1rem 0rem rgb(0, 110, 255);
+    transition: 0.4s ease-out;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 65px auto;
+}
+
+.hero-content {
+    flex: 1;
+    width: 600px;
+    margin: 0px 25px;
+}
+
+.hero-content h2 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-align: left;
+    color: transparent;
+    -webkit-text-stroke: 0.7px ; /* Fixed invalid var(#0757e1) */
+    background-image: linear-gradient(var(--primary-color), var(--white), var(--text-light)); /* Fixed variables */
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+.hero-content h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-right: 2px solid var(--primary-color); /* Fixed variable */
+    z-index: -1;
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes homeBgText {
+    0% {
+        background-position: -33rem 0;
+    }
+    100% {
+        background-position: 33rem 0;
+    }
+}
+
+@keyframes homeCursorText {
+    0% {
+        width: 0;
+    }
+    20% {
+        width: 100%;
+    }
+    50% {
+        width: 100%;
+    }
+    70% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.hero-content p {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Align all images to the right */
+    align-items: center;
+}
+
+.footer__socials{
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    position: absolute;
+    left: 0;
+    margin-top: 13%;
+    margin-left: 6%;
+}
+
+.footer__socials a{
+    padding: 10px 10px;
+    font-size: 1.75rem;
+    color: var(--text-light);
+    background-color: #f8f7fd;
+    border-radius: 100%;
+    transition: 0.3s;
+}
+
+.footer__socials a:hover{
+    color: var(--white);
+    background-color: rgb(0, 47, 255);
+    transform: scale(1.2);
+}
+
+
+img {
+   height: auto;
+   width: auto;
+   max-width: 300px;
+   height: auto;
+   border-radius: 80px;
+}
+
+@media screen and (max-width: 768px) {
+    .heading h1 {
+        font-size: 90px;
+        margin-top: 30px;
+    }
+}
