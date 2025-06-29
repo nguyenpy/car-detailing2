@@ -221,7 +221,7 @@ nav {
 
 .banner__container{
     display: grid;
-    grid-auto-rows: minmax(0, 350px);
+    grid-auto-rows: minmax(0, 375px);
 }
 
 .banner__card{
@@ -277,13 +277,32 @@ nav {
     gap: 4rem 2rem;
 }
 
-.service__card img{
-    max-width: 300px;
-    margin-inline: auto;
-    margin-bottom: 1rem;
-    border-radius: 60%;
-    box-shadow: 5px 5px 20px 5px rgba(0,0,0,0.5);
+.service__card:hover {
+    border: 5px solid var(--white);
+    background-color: transparent;
+    animation: zoom 10s infinite;
+
 }
+
+@keyframes zoom {
+    0% {
+        transform: scale(1.0);
+    }
+    20%{
+        transform: scale(1.1);
+    }
+    40%{
+        transform: scale(1.1);
+    }
+    80%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1.0);
+    }
+
+}
+
 
 .service__card:last-child {
     opacity: 90%;
@@ -294,17 +313,15 @@ nav {
     box-shadow: 0px 0px 20px 0px rgb(114, 170, 255);
 }
 
-.service__card img:hover {
-    transform: scaleX(1.1);
-    border-radius: 60%;
+.service__card:hover {
+    transform: scale(1.1);
     border: 2px solid rgb(254, 254, 254);
 }
 
-.service__card img,li:hover{
-    border: 2px solid rgb(255, 255, 255);
+.service__card img{
     border-radius: 60%;
-    box-shadow: 10px 10px 20px 10px rgb(116, 169, 255);
 }
+
 
 @keyframes bounceFrame {
     0%{
@@ -660,7 +677,7 @@ nav {
     text-align: left;
 }
 
-@media (width > 480px) {
+@media (min-width: 576px) {
     .header__content h1{
         font-size: 4rem;
         line-height: 5rem;
@@ -695,7 +712,7 @@ nav {
     }
 }
 
-@media (width > 768px) {
+@media (min-width: 768px) {
     nav {
       padding: 2rem 1rem;
       position: static;
@@ -774,25 +791,23 @@ nav {
       max-width: 500px;
     }
   }
-  
-  @media (width > 1024px) {
-    .service__grid {
-      gap: 2rem;
+
+  @media(min-width: 992px){
+    .header__content h1{
+        font-size: clamp(4rem, 7vw, 5rem);
+        line-height: 1.2;
+    }
+    .service__grid{
+        gap: 2rem;
     }
   }
+  
+  @media (min-width: 1200px) {
+    .service__grid {
+      gap: 2.5rem;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .customisation__grid {
+        gap: 2.5rem;
+    }
+  }
